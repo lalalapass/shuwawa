@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>しゅわわ - 手話でつながるコミュニティ</title>
+    <script>
+      // GitHub PagesでSPAをホストする場合、404.htmlでindex.htmlにリダイレクト
+      // これにより、直接URLにアクセスしても正しくルーティングされる
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      
+      // /shuwawa/ パスが含まれている場合は削除
+      if (path.startsWith('/shuwawa/') || path === '/shuwawa') {
+        var newPath = path.replace('/shuwawa', '') || '/';
+        window.location.replace(newPath + search + hash);
+      } else {
+        // その他のパスは index.html にリダイレクト
+        // React Routerが正しいルーティングを処理する
+        window.location.replace('/index.html' + search + hash);
+      }
+    </script>
+  </head>
+  <body>
+    <p>リダイレクト中...</p>
+  </body>
+</html>
